@@ -171,3 +171,289 @@ function addThree() {
 function addFive() {
     sum += 5;
 }
+
+//Assigned with a Returned Value
+var processed = 0;
+function processArg(num) {
+    return (num + 3) / 5;
+}
+
+processed = processArg(10);
+console.log(processed);
+
+//Stand in Line
+function nextInline(arr, item) {
+    arr.push(item);
+    return arr.shift();
+}
+var testArr = [1,2,3,4,5];
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInline(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+
+//Use Conditional Logic with If Statements
+function trueOrFalse(wasThatTure) {
+    if (wasThatTure) {
+        return "Yes, it's true";
+    }
+        return "No, it's false";
+}
+console.log(trueOrFalse(true));
+
+//Comaprison with the equality Operator 
+function testEqual(val) {
+    if (val == 12) {
+        return "Equal";
+    }
+    return "Not Equal";
+}
+console.log(testEqual(10));
+
+//Comparison with the Strict Equality Operator
+function  testStrict(val) {
+    if (val === 10) {
+        return "Equal";
+    }
+    return "Not Equal";
+}
+console.log(testStrict(10));
+/**
+ 3 == 3
+ 3 === '3'
+ */
+
+ //Comparisons with the Logical And Operator 
+ function  testGreaterThan(val) {
+    if (val === 100) {
+        return "Over 100";
+    }
+    if (val > 10) {
+        return "Over 10";
+    }
+    return "10 or Under";
+}
+console.log(testGreaterThan(10));
+/**
+>=      greater than or equal
+<=      less than or equal
+*/
+
+//Comparisons with the Logical And Operator
+function testLogicalAnd(val) {
+    if (val <= 50 && val >=15) {
+        return "yes";
+    }
+    return "No";
+}
+testLogicalAnd(10);
+/**
+&&      AND
+||      OR
+ */
+
+//Else Statements
+function  testElse(val) {
+    var result = "";
+    if (val > 5) {
+        result = "Bigger than 5";
+    } else {
+        result = "5 or Smaller";
+    }
+    return result;
+}
+console.log(testElse(6));
+
+//Else If Statement
+function testElseIf(val) {
+    if (val > 10) {
+        return "Greater than 5";
+    } else if (val < 5) {
+        return "Smaller than 5";
+    } else {
+        return "Between 5 and 10";
+    }
+}
+console.log(testElseIf(7));
+
+//If Else Statements
+function orderMyLogic(val) {
+    if (val < 10) {
+        return "Less than 5";
+    } else if (val < 5) {
+        return "Less than 5";
+    } else {
+        return "Greater than or equal to 10";
+    }
+}
+console.log(orderMyLogic(3));
+
+//Switch Statement
+/**
+function abc() {
+    var answer = "";
+    switch() {
+        case 1:
+            answer = "";
+            break;
+        case 2:
+            answer = "";
+            break;
+        case 3:
+            answer = "";
+            break;
+    }
+    return answer;
+}
+ */
+
+//Build JS Objects
+var ourDog = {
+    "name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything!"]
+};
+
+//Accessing Object Properties with Dot Notation
+var testObj = {
+    "hat": "ballcap",
+    "shirt": "jersey",
+    "shoes": "cleats"
+};
+ var hatValue = testObj.hat;
+ var shirtValue = testObj.shirt;
+
+ //Accessing Object Properties with Breacket Notation
+ var testObj = {
+    "an entree": "hamburger",
+    "my side": "veggies",
+    "the drink": "water"
+};
+ var hatValue = testObj["an entree"];
+ var shirtValue = testObj['the drink'];
+
+ //Add new Properties to Objects
+ var myObjt = {
+    "name": "Happy Coder",
+    "legs": 2,
+    "brother": 1,
+    "friends": ["freeCodeCamp Campers"]
+ };
+
+ myObjt['sister'] = "Alice";
+ console.log(myObjt);
+
+ //Delete Properties to Object
+ var myObjt = {
+    "name": "Happy Coder",
+    "legs": 2,
+    "brother": 1,
+    "friends": ["freeCodeCamp Campers"]
+ };
+ delete myObjt.brother;
+
+//Generate Random Fractions
+function randomFraction() {
+    return Math.random();
+}
+console.log(randomFraction());  //between 0 and 1, but it could not be o and 1
+
+//Generate Random whole Numbers
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20)
+function randomWholeNum() {
+    return Math.floor(Math.random() * 10);
+}
+console.log(randomWholeNum());
+
+/**
+parseInt()      //convert str to int
+ */
+
+
+//Ternary Operator
+//  condition ? statement-if-true : statement-if-false;
+function checkEqual(a, b) {
+    return a === b ? true : false;
+    return a === b;
+}
+checkEqual(1,2);
+
+//Multiple Ternary Operator
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+}
+console.log(checkSign(-10));
+
+//Different between var an let
+var catName = "Q";      //test with let
+var quote;              //test with let
+
+var catName = "B"
+function catTakl() {
+    "use strick";
+
+    catName = "O";
+    quote = catName + " says Meow!";
+}
+catTakl();
+
+//another var vs let
+function checkSocpe() {
+    "use strict";
+    let i = "function scope";
+    if (true) {
+        let i = "block sope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("function socpe is is: " + i);
+    return i;
+}
+checkSocpe();
+
+//Declare a Read-Only Variable with the const Keyword
+function printManyTimes(str) {
+    "use strict";
+    const SENTENCE = str + " is cool!";
+    for(let i = 0; i < str.length; i+=2) {
+        console.log(SENTENCE);
+    }
+}
+printManyTimes("freeCodeCamp");
+
+//Prevent Object Mutation
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14,
+    };
+    Object.freeze(MATH_CONSTANTS);  //never changes
+    try {
+        MATH_CONSTANTS.PI = 99;  
+    } catch(e) {
+        console.log(e);
+    }
+    
+    return MATH_CONSTANTS.PI;
+}
+const PI = freezeObj();
+console.log(PI);
+
+//Use Arrow Function to Write Concise Anonymous Functions
+var magic = function() {
+    return new Date();
+};
+console.log(magic);
+var magic = () => {
+    return new Date();
+};
+console.log(magic);
+var magic = () =>new Date();
+console.log(magic);
+
+//Rest Operator 
+const sum1 = (function(){
+    return function sum1(...args) {
+        return args.reduce((a,b) => a + b, 0);
+    };
+})();
+console.log(sum1(1,2,3,4,));
