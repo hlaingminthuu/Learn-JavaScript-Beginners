@@ -457,3 +457,38 @@ const sum1 = (function(){
     };
 })();
 console.log(sum1(1,2,3,4,));
+
+//Use Destructuring Assignment with the Rest Operator
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+    const [ , , ...arr] = list;
+    return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr);
+console.log(source);
+
+//Write Concise Object Literal Declarations Using Simple Fields
+const createPerson = (name, age, gender) => ({ name,age, gender });
+console.log(createPerson("Alice", 22, "male"));
+
+//Use class Syntax to Define a Constructor Function
+function makeCalss() {
+    class Vegatable {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    return Vegatable;
+};
+const Vegatable = makeCalss();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name);
+
+//Understand the Differences Between import and require
+import { capitalizeString } from "./string_function";
+const cap = capitalizeString("hello!");
+console.log(cap);
+
+//Use * to Import Everthing from a File
+import * as capitalixeString from "captalixe_strings";
